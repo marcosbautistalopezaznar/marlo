@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Pila - dev_1</title>	
+	<style type="text/css" media="screen">
+		::selection{
+			background: transparent;
+			cursor: pointer;
+		}
+		*{
+			font-family: sans-serif;
+		}
+		body{
+			margin: 0;
+			padding: 0;
+		}
+		text{
+			font-family: sans-serif;
+		}
+		ul{
+			list-style: none;
+			border: .5em solid black;
+			padding:  1em;
+			margin: 2em;
+		}
+		li{
+			width: 50px;
+			height: 50px;
+			margin: 1em;
+			background: red;
+		}
+		.recuadro.score{
+			rx: 20px;
+			ry: 20px;
+		}
+		#macromarco{
+			display: flex;
+			flex-direction: column;
+		}
+		#pop3,#pop0{
+			opacity: 0;
+			transition: opacity .5s ease;
+		}
+		#secundario{
+			opacity: 0;
+		}
+		#menu{
+			position: absolute;
+			bottom: 0px;
+			opacity: 0;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="marco">
+		<div id=menu>
+			<ul>
+				<li style="background: blue"> </li>
+				<li style="background: green"> </li>
+				<li style="background: yellow"> </li>
+				<li style="background: orange"> </li>
+				<li style="background: red"> </li>
+			</ul>
+		</div>
+	</div>
+</body>
+	<script type="text/ecmascript">
+		(function(){
+	    	// create the svg element
+	    	const svg1 = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+	    	// set viewbox
+	    	svg1.setAttribute("viewBox","0 0 450 300");
+
+	    	//parametros
+	    	let xGlobal = 75;
+
+			function crearGrupo(id,padre){
+	    		const grupo = document.createElementNS("http://www.w3.org/2000/svg", "g");
+	    		grupo.setAttribute("id", id);
+	    		padre.appendChild(grupo);
+	    		return grupo;
+	    	}
+
+	    	function crearCirculo(clase,cx,cy,r,sc,sw,f,g){
+	    		const circleRes = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+	    		circleRes.setAttribute("class", clase);
+	    		circleRes.setAttribute("cx", cx);
+	    		circleRes.setAttribute("cy", cy);
+	    		circleRes.setAttribute("r", r);
+	    		circleRes.setAttribute("stroke", sc);
+	    		circleRes.setAttribute("stroke-width", sw);
+	    		circleRes.setAttribute("fill", f);
+
+	    		g.appendChild(circleRes);
+	    	}	    	
+
+	    	function crearRectangulo(clase,x,w,y,h,sc,sw,f,g){
+	    		const rectRes = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+	    		rectRes.setAttribute("class", clase);
+	    		rectRes.setAttribute("x", x);
+	    		rectRes.setAttribute("width", w);
+	    		rectRes.setAttribute("y", y);
+	    		rectRes.setAttribute("height", h);
+	    		rectRes.setAttribute("stroke", sc);
+	    		rectRes.setAttribute("stroke-width", sw);
+	    		rectRes.setAttribute("fill", f);
+
+	    		g.appendChild(rectRes);
+	    	}
+
+	    	function crearTriangulo(clase,puntos,sc,sw,f,g){
+	    		const rectRes = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
+	    		rectRes.setAttribute("class", clase);
+	    		rectRes.setAttribute("points", puntos);
+	    		rectRes.setAttribute("stroke", sc);
+	    		rectRes.setAttribute("stroke-width", sw);
+	    		rectRes.setAttribute("fill", f);
+
+	    		g.appendChild(rectRes);
+	    	}
+
+	    	function crearTexto(clase,x,y,f,content,g){
+	    		const txt = document.createElementNS("http://www.w3.org/2000/svg", "text");
+	    		txt.setAttribute("class", clase);
+	    		txt.setAttribute("x", x);
+	    		txt.setAttribute("y", y);
+	    		txt.setAttribute("fill", f);
+	    		txt.innerHTML = content;
+
+	    		g.appendChild(txt);
+	    	}
+
+	    	const g1 = crearGrupo('g1',svg1);
+	    	crearRectangulo('pila',xGlobal,'140','70','40','black','2px','white',g1);
+	    	crearRectangulo('recuadro',xGlobal+80,'20','70','40','black','1px','transparent',g1);
+	    	crearRectangulo('recuadro',xGlobal+100,'20','70','40','black','1px','transparent',g1);
+	    	crearRectangulo('recuadro',xGlobal+120,'20','70','40','black','1px','transparent',g1);
+	    	crearTexto("if_txt",xGlobal+15,95,'black',"THEN",g1);
+	    	
+	    	const g2 = crearGrupo('g2',svg1);
+	    	crearRectangulo('pila',xGlobal,'140','70','40','black','2px','white',g2);
+	    	crearRectangulo('recuadro',xGlobal+80,'20','70','40','black','1px','transparent',g2);
+	    	crearRectangulo('recuadro',xGlobal+100,'20','70','40','black','1px','transparent',g2);
+	    	crearRectangulo('recuadro',xGlobal+120,'20','70','40','black','1px','transparent',g2);
+	    	crearTexto("if_txt",xGlobal+15,95,'black',"IF",g2);
+
+	    	
+	    	const g3 = crearGrupo('g3',svg1);
+
+	    	const ns3 = crearGrupo('ns3',g3);
+	    	crearCirculo('in_pila',xGlobal,90,10,'transparent',0,'black',ns3);
+	    	crearRectangulo('pila',xGlobal,'140','70','40','black','2px','yellow',ns3);
+	    	crearTexto("ns",xGlobal+55,95,'black',"0'5p",ns3);
+
+	    	const secundario = crearGrupo('secundario',ns3);
+	    	crearTriangulo('arriba','90,77 85,88 95,88','transparent','0px','black',secundario);
+	    	crearTriangulo('abajo','90,102 85,92 95,92','transparent','0px','black',secundario);
+	    	crearRectangulo('za',85,10,77,25,'transparent','0px','transparent',secundario);
+
+	    	
+	    	const ne3 = crearGrupo('ne3',g3);
+	    	crearCirculo('out_pila',xGlobal+140,90,10,'transparent',0,'black',ne3);
+	    	crearRectangulo('recuadro_ne',xGlobal+100.5,'39','70.5','39','black','1px','yellow',ne3);
+	    	crearTexto("ne",xGlobal+115.5,95,'black',"0",ne3);
+
+	    	const pop0 = crearGrupo('pop0',g3);
+	    	crearTriangulo('indicador score',(xGlobal+44)+',60 '+(xGlobal+27)+',70 '+(xGlobal+50)+',88','transparent','0px','black',pop0);
+	    	crearRectangulo('recuadro score',xGlobal-30,'130','33','40','black','2px','white',pop0);
+	    	crearTexto("score",xGlobal-10,58,"black","0q 0'5r 0'5p",pop0);
+
+	    	const pop3 = crearGrupo('pop3',g3);
+	    	crearTriangulo('indicador score',(xGlobal+155)+',60 '+(xGlobal+155)+',80 '+(xGlobal+129)+',88','transparent','0px','black',pop3);
+	    	crearRectangulo('recuadro score',xGlobal+135,'40','50','40','black','2px','white',pop3);
+	    	crearTexto("score",xGlobal+150,75,"black","3",pop3);
+	    	
+	    	// attach container to document
+	    	document. getElementById("marco").appendChild(svg1);
+
+	    	function abrirSecundarios(){
+
+	    		let traslado1 = (document.getElementById('g1').style.transform == 'translate(0px, 40px)')?'translate(0px, 0px)':'translate(0px, 40px)';
+	    		let traslado2 = (document.getElementById('g2').style.transform == 'translate(0px, -40px)')?'translate(0px, 0px)':'translate(0px, -40px)';
+
+	    		document.getElementById('g1').style.transition = 'transform .5s ease'; 
+	    		document.getElementById('g2').style.transition = 'transform .5s ease';
+	    		document.getElementById('g1').style.transform = traslado1; 
+	    		document.getElementById('g2').style.transform = traslado2;
+	    	}
+
+	    	function ocultarRoot(){
+	    		document.getElementById('pop0').style.opacity = 1;
+	    	}
+	    	function mostrarRoot(){
+	    		document.getElementById('pop0').style.opacity = 0;
+	    	}
+
+	    	function ocultarScore(){
+	    		document.getElementById('pop3').style.opacity = 1;
+	    	}
+	    	function mostrarScore(){
+	    		document.getElementById('pop3').style.opacity = 0;
+	    	}
+	    	//transform: translate(0px, 40px);
+
+	    	document.getElementById('g3').addEventListener('click',abrirSecundarios);
+	    	document.getElementById('ns3').addEventListener('mouseover',ocultarRoot);
+	    	document.getElementById('ns3').addEventListener('mouseleave',mostrarRoot);
+	    	document.getElementById('ne3').addEventListener('mouseover',ocultarScore);
+	    	document.getElementById('ne3').addEventListener('mouseleave',mostrarScore);
+
+		})();
+	</script>
+</html>

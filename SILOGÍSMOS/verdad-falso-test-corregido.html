@@ -1,0 +1,293 @@
+<html lang="es-es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dibujo</title>
+    <style>
+        ::selection{
+            background: none;
+        }
+        body, #fondo{
+            position: absolute;
+    
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }       
+        .e-menu{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="marco">
+        <svg width="223.78mm" height="200.66mm" version="1.1" viewBox="0 0 223.78 200.66" xmlns="http://www.w3.org/2000/svg">
+            <!-- ES IMPORTANTE EL ORDEN DE LOS CUADRADOS DE LA PALETA -->
+            <path class="e-paleta" d="m10 168.01h15.543v10.782h-15.543z" style="fill-rule:evenodd;fill:#800000;stroke-width:.26458"/>
+            <path class="e-paleta" d="m33.53 168.01h15.543v10.782h-15.543z" style="fill-rule:evenodd;fill:#ff0000;stroke-width:.26458"/>
+            <path class="e-paleta" d="m57.06 168.01h15.543v10.782h-15.543z" style="fill-rule:evenodd;fill:#ff6600;stroke-width:.26458"/>
+            <path class="e-paleta" d="m80.59 168.01h15.543v10.782h-15.543z" style="fill-rule:evenodd;fill:#ffcc00;stroke-width:.26458"/>
+            <path class="e-paleta" d="m104.12 168.01h15.543v10.782h-15.543z" style="fill-rule:evenodd;fill:#ffff00;stroke-width:.26458"/>
+            <path class="e-paleta" d="m127.65 168.01h15.543v10.782h-15.543z" style="fill-rule:evenodd;fill:#00ff00;stroke-width:.26458"/>
+            <path class="e-paleta" d="m151.18 168.01h15.543v10.782h-15.543z" style="fill-rule:evenodd;fill:#008000;stroke-width:.26458"/>
+            <path class="e-paleta" d="m174.71 168.01h15.543v10.782h-15.543z" style="fill-rule:evenodd;fill:#008080;stroke-width:.26458"/>
+            <path class="e-paleta" d="m198.24 168.01h15.543v10.782h-15.543z" style="fill-rule:evenodd;fill:#0000ff;stroke-width:.26458"/>
+            <text x="14.535527" y="190.57593" style="fill:#000000;font-family:sans-serif;font-size:6.1106px;letter-spacing:0px;line-height:1.25;stroke-width:.26458;word-spacing:0px" xml:space="preserve"><tspan x="14.535527" y="190.57593" style="stroke-width:.26458">-1</tspan></text>
+            <text x="201.57957" y="190.57593" style="fill:#000000;font-family:sans-serif;font-size:6.1106px;letter-spacing:0px;line-height:1.25;stroke-width:.26458;word-spacing:0px" xml:space="preserve"><tspan x="201.57957" y="190.57593" style="stroke-width:.26458">+1</tspan></text>
+            <text x="109.94547" y="190.56696" style="fill:#000000;font-family:sans-serif;font-size:6.1106px;letter-spacing:0px;line-height:1.25;stroke-width:.26458;word-spacing:0px" xml:space="preserve"><tspan x="109.94547" y="190.56696" style="stroke-width:.26458">0</tspan></text>
+            <text x="172.94011" y="190.56696" style="fill:#000000;font-family:sans-serif;font-size:6.1106px;letter-spacing:0px;line-height:1.25;stroke-width:.26458;word-spacing:0px" xml:space="preserve"><tspan x="172.94011" y="190.56696" style="stroke-width:.26458">+0.75</tspan></text>
+            <text x="149.39532" y="190.56699" style="fill:#000000;font-family:sans-serif;font-size:6.1106px;letter-spacing:0px;line-height:1.25;stroke-width:.26458;word-spacing:0px" xml:space="preserve"><tspan x="149.39532" y="190.56699" style="stroke-width:.26458">+0.50</tspan></text>
+            <text x="125.88037" y="190.56847" style="fill:#000000;font-family:sans-serif;font-size:6.1106px;letter-spacing:0px;line-height:1.25;stroke-width:.26458;word-spacing:0px" xml:space="preserve"><tspan x="125.88037" y="190.56847" style="stroke-width:.26458">+0.25</tspan></text>
+            <text x="80.015579" y="190.56847" style="fill:#000000;font-family:sans-serif;font-size:6.1106px;letter-spacing:0px;line-height:1.25;stroke-width:.26458;word-spacing:0px" xml:space="preserve"><tspan x="80.015579" y="190.56847" style="stroke-width:.26458">-0.25</tspan></text>
+            <text x="55.275814" y="190.56696" style="fill:#000000;font-family:sans-serif;font-size:6.1106px;letter-spacing:0px;line-height:1.25;stroke-width:.26458;word-spacing:0px" xml:space="preserve"><tspan x="55.275814" y="190.56696" style="stroke-width:.26458">-0.50</tspan></text>
+            <text x="31.760878" y="190.56699" style="fill:#000000;font-family:sans-serif;font-size:6.1106px;letter-spacing:0px;line-height:1.25;stroke-width:.26458;word-spacing:0px" xml:space="preserve"><tspan x="31.760878" y="190.56699" style="stroke-width:.26458">-0.75</tspan></text>
+            <g transform="translate(1.7408 1.7368e-6)">
+             <path id= "a0" class="e-activo" d="m141.44 53.246a46.695 46.873 0 0 0-0.76884 0.02863v93.676a46.695 46.873 0 0 0 0.76884 0.0389 46.695 46.873 0 0 0 46.695-46.873 46.695 46.873 0 0 0-46.695-46.873z" style="fill:#ffff00;stroke-width:.50458;stroke:#000000"/>
+             <path id= "a1" class="e-activo" d="m82.337 53.504a46.695 46.873 0 0 0-46.692 46.873 46.695 46.873 0 0 0 46.692 46.873 46.695 46.873 0 0 0 0.76958-0.0286v-7.5017a46.695 46.873 0 0 1-21.956-39.724 46.695 46.873 0 0 1 21.956-39.687v-6.7636a46.695 46.873 0 0 0-0.76958-0.03865z" style="fill:#ffff00;stroke-width:.50458;stroke:#000000"/>
+             <ellipse id= "a2" class="e-activo" cx="111.89" cy="75.396" rx="21.535" ry="21.617" style="fill:#ffff00;stroke-width:.50458;stroke:#000000"/>
+             <ellipse id= "a3" class="e-activo" cx="111.89" cy="125.8" rx="21.535" ry="21.617" style="fill:#ffff00;stroke-width:.50458;stroke:#000000"/>
+            </g>
+            <g id= "pc0" class="e-porciento">
+             <path d="m191.49 71.868-12.926 11.704 15.623-6.6139z" style="fill:#916f6f"/>
+             <circle transform="rotate(130.87)" cx="-79.787" cy="-197.11" r="13.404" style="fill:#c8b7b7;paint-order:markers stroke fill;stroke-width:2.1167;stroke:#916f6f"/>
+             <text x="201.25462" y="71.189034" style="fill:#000000;font-family:sans-serif;font-size:7.0556px;letter-spacing:0px;line-height:1.25;stroke-width:.26458;text-align:center;text-anchor:middle;word-spacing:0px" xml:space="preserve"><tspan id="pct0" x="201.25462" y="71.189034" style="stroke-width:.26458;text-align:center;text-anchor:middle">-0.25</tspan></text>
+            </g>
+            <g id= "pc1" class="e-porciento">
+             <path d="m38.278 87.971 13.93 10.488-9.4403-14.096z" style="fill:#916f6f"/>
+             <circle transform="rotate(30)" cx="68.284" cy="51.774" r="13.404" style="fill:#c8b7b7;paint-order:markers stroke fill;stroke-width:2.1167;stroke:#916f6f"/>
+             <text x="33.238747" y="81.54464" style="fill:#000000;font-family:sans-serif;font-size:7.0556px;letter-spacing:0px;line-height:1.25;stroke-width:.26458;text-align:center;text-anchor:middle;word-spacing:0px" xml:space="preserve"><tspan id="pct1" x="33.238747" y="81.54464" style="stroke-width:.26458;text-align:center;text-anchor:middle">-0.25</tspan></text>
+            </g>
+            <g id= "pc2" class="e-porciento">
+             <path d="m94.345 63.005 13.93 10.488-9.4403-14.096z" style="fill:#916f6f"/>
+             <circle transform="rotate(30)" cx="104.36" cy="2.1196" r="13.404" style="fill:#c8b7b7;paint-order:markers stroke fill;stroke-width:2.1167;stroke:#916f6f"/>
+             <text x="89.305389" y="56.578854" style="fill:#000000;font-family:sans-serif;font-size:7.0556px;letter-spacing:0px;line-height:1.25;stroke-width:.26458;text-align:center;text-anchor:middle;word-spacing:0px" xml:space="preserve"><tspan id="pct2" x="89.305389" y="56.578854" style="stroke-width:.26458;text-align:center;text-anchor:middle">-0.25</tspan></text>
+            </g>
+            <g id= "pc3" class="e-porciento">
+             <path d="m133.96 105.83-12.926 11.704 15.623-6.6139z" style="fill:#916f6f"/>
+             <circle transform="rotate(130.87)" cx="-16.465" cy="-175.82" r="13.404" style="fill:#c8b7b7;paint-order:markers stroke fill;stroke-width:2.1167;stroke:#916f6f"/>
+             <text x="143.72472" y="105.14769" style="fill:#000000;font-family:sans-serif;font-size:7.0556px;letter-spacing:0px;line-height:1.25;stroke-width:.26458;text-align:center;text-anchor:middle;word-spacing:0px" xml:space="preserve"><tspan id="pct3" x="143.72472" y="105.14769" style="stroke-width:.26458;text-align:center;text-anchor:middle">-0.25</tspan></text>
+            </g>
+            <g class="e-menu">
+            <rect class="e-menu-bg" x="31.113" y="19.54" width="56.62" height="16.504" style="fill-rule:evenodd;fill:#0000ff;stroke-width:.26458"/>
+            <text x="37.893349" y="31.542027" style="fill:#ffffff;font-family:sans-serif;font-size:10.315px;letter-spacing:0px;line-height:1.25;stroke-width:.26458;word-spacing:0px" xml:space="preserve"><tspan class="e-menu-txt" x="37.893349" y="31.542027" style="fill:#ffffff;stroke-width:.26458">VERDAD</tspan></text>
+            </g>
+            <g class="e-menu">
+             <rect class="e-menu-bg" x="87.733" y="19.54" width="68.264" height="16.504" style="fill-rule:evenodd;fill:#800000;stroke-width:.26458"/>
+             <text x="94.787163" y="31.40604" style="fill:#ffffff;font-family:sans-serif;font-size:10.315px;letter-spacing:0px;line-height:1.25;stroke-width:.26458;word-spacing:0px" xml:space="preserve"><tspan class="e-menu-txt" x="94.787163" y="31.40604" style="fill:#ffffff;stroke-width:.26458">FALSEDAD</tspan></text>
+            </g>
+            <g class="e-menu">
+             <rect class="e-menu-bg"  x="156" y="19.54" width="41.107" height="16.504" style="fill-rule:evenodd;fill:#008000;stroke-width:.26458"/>
+             <text x="163.72838" y="31.40604" style="fill:#ffffff;font-family:sans-serif;font-size:10.315px;letter-spacing:0px;line-height:1.25;stroke-width:.26458;word-spacing:0px" xml:space="preserve"><tspan class="e-menu-txt" x="163.72838" y="31.40604" style="fill:#ffffff;stroke-width:.26458">TEST</tspan></text>
+            </g>
+        </svg>
+    </div>
+ <script>
+     (function(){
+
+        // Variables de control de funciones
+        // V: VERDAD
+        // F: FALSEDAD
+        // T: TEST
+        
+        var modos = {'V':0,'F':1,'T':2};
+        var modosArray = ['V','F','T'];
+        var modo = 'V'; 
+
+        // Variable Paleta
+        
+        var colActivo = document.querySelectorAll(".e-activo");
+        var colPaleta = document.querySelectorAll(".e-paleta");
+        var color = '';
+        var paleta = {
+            '-1':'',
+            '-0.75':'',
+            '-0.50':'',
+            '-0.25':'',
+            '0':'',
+            '+0.25':'',
+            '+0.50':'',
+            '+0.75':'',
+            '+1':''
+        };
+
+        var reglaNumerica = ['-1','-0.75','-0.50','-0.25','0','+0.25','+0.50','+0.75','+1'];
+
+        //Por Cientos
+        var colPorcientos = document.querySelectorAll(".e-porcientos");
+
+        //Rellena la variable Paleta
+
+        for(var i = 0; i < colPaleta.length; i++){
+            paleta[reglaNumerica[i]] = colPaleta[i].style.fill;
+        };
+
+        //Test de relleno de variable
+        /*
+        for(var i in paleta){
+            console.log(i + " : " + paleta[i]);
+        };
+        */
+
+        var tablaControl = {
+        'V':{
+            'a1':['+1', '+0.50', '+0.50', '+0.25'],
+            'a2':['+1', '+1', '0', '0'],
+            'a3':['+1', '0', '+1', '0'],
+            'a0':['+1', '+1', '+1', '+1']
+        },
+        'F':{
+            'a1':['-1', '-1', '-1', '-1'],
+            'a2':['0', '-1', '0', '-1'],
+            'a3':['0', '0', '-1', '-1'],
+            'a0':['-0.25', '-0.50', '-0.50', '-1']
+        }};
+
+        var tablaControlOrden = ['a1','a2','a3','a0'];
+
+        // Cambiar estilo a Colecciones
+
+        function ejecutarEstiloAColeccion(clase, atributo, valor){
+            var coleccion = document.querySelectorAll("."+clase);
+            for(let i = 0; i < coleccion.length; i++){
+                coleccion[i].style[atributo] = valor;
+            };
+        };
+
+        // Ejecuciones de Estilos
+
+        ejecutarEstiloAColeccion('e-porciento', 'display', 'none');
+
+        
+        function limpiarMenu(){
+            ejecutarEstiloAColeccion("e-menu-txt", "fill", "#000000");
+            ejecutarEstiloAColeccion("e-menu-bg", "fill", "#ffffff");
+        };
+
+        // Posición inicial
+
+        function posicionMenu(valormodo){
+            limpiarMenu();
+            switch(valormodo){
+                case 'V':
+                    modo = 'V';
+                    ejecutarEstiloAColeccion('e-porciento', 'display', 'none');
+                    ejecutarEstiloAElemento("e-menu-txt", "fill", "#ffffff");
+                    ejecutarEstiloAElemento("e-menu-bg", "fill", paleta['+1']);
+                    
+                    color =  paleta['+1'];
+
+                    limpiarEventosTesteo();
+                    crearEventosColorear();
+
+                    break;
+                case 'F':
+                    modo = 'F';
+                    ejecutarEstiloAColeccion('e-porciento', 'display', 'none');
+                    ejecutarEstiloAElemento("e-menu-txt", "fill", "#ffffff");
+                    ejecutarEstiloAElemento("e-menu-bg", "fill", paleta['-1']);
+                    
+                    color =  paleta['-1'];
+                    
+                    limpiarEventosTesteo();
+                    crearEventosColorear();
+
+                    break;
+                case 'T':
+                    modo = 'T';
+                    ejecutarEstiloAColeccion('e-porciento', 'display', 'none');
+                    ejecutarEstiloAElemento("e-menu-txt", "fill", "#ffffff");
+                    ejecutarEstiloAElemento("e-menu-bg", "fill", paleta['+0.50']);
+
+                    limpiarEventosColorear();
+                    crearEventosTesteo();
+                    break;
+                default:
+                    console.log('Fallo en la ejecución de posición Menú');
+            };
+        };
+
+        function ejecutarEstiloAElemento(clase, atributo, valor){
+            var coleccion = document.querySelectorAll("."+clase);
+            for(let i = 0; i < coleccion.length; i++){
+                if(i == modos[modo]){
+                    coleccion[i].style[atributo] = valor;
+                };
+            };
+        };
+
+        posicionMenu('V');
+
+        // Eventos
+        var colMenu = document.querySelectorAll('.e-menu');
+
+        for(let i = 0; i < colMenu.length; i++){
+            colMenu[i].addEventListener('click',function(){
+                posicionMenu(modosArray[i]);
+            });
+        };
+
+        //Colorear
+        function crearEventosColorear(){
+            for(var i = 0; i < colActivo.length; i++){
+                colActivo[i].addEventListener('click', colorear);
+            };
+        };
+
+        function limpiarEventosColorear(){
+            for(var i = 0; i < colActivo.length; i++){
+                colActivo[i].removeEventListener('click', colorear);
+            };
+        };
+
+        //Testeo
+        function crearEventosTesteo(){
+            for(var i = 0; i < colActivo.length; i++){
+                colActivo[i].addEventListener('click', testear);
+            };
+        };
+        function limpiarEventosTesteo(){
+            for(var i = 0; i < colActivo.length; i++){
+                colActivo[i].removeEventListener('click', testear);
+            };
+        };
+
+        function colorear(e){
+
+            e.target.style.fill = (color)?color:e.target.style.fill;
+            
+            var ref = tablaControl[modo][e.target.id];
+
+            for(var i = 0; i < tablaControlOrden.length; i++){
+                document.getElementById(tablaControlOrden[i]).style.fill = paleta[ref[i]];
+            };
+        };
+
+        function testear(e){
+
+            ejecutarEstiloAColeccion('e-porciento', 'display', 'none');
+
+            var strNum = e.target.id.slice(-1);
+            var dato = "";
+
+            for(var k in paleta){
+                if(paleta[k] == e.target.style.fill){
+                    document.getElementById('pct'+strNum).innerHTML = k;
+                };
+            };
+            
+            document.getElementById('pc'+strNum).style.display = "inline";
+        };
+     })(document);
+ </script>
+ </body>
+</html>
